@@ -1,15 +1,21 @@
-import React, {useState} from 'react';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import React, {FC, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
+import {RootStackParamList} from '../../types';
 import StyledButton from '../components/StyledButton';
 import StyledTextInput from '../components/StyledTextInput';
 import {heightPercentageToDP as dh} from '../utils/responsive';
 
-const LoginScreen = () => {
+interface LoginScreenProps {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Login'>;
+}
+
+const LoginScreen: FC<LoginScreenProps> = ({navigation}) => {
   const [userName, setUserName] = useState<string>();
   const [password, setPassword] = useState<string>();
 
   function handleLogin() {
-    console.warn(userName, password);
+    navigation.navigate('Home');
   }
 
   return (

@@ -5,15 +5,19 @@
  * @format
  * @flow strict-local
  */
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
-import LoginScreen from './src/screens/LoginScreen';
+import {StatusBar, StyleSheet} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import RootNavigator from './src/navigation/RootNavigator';
 
 const App = () => (
-  <SafeAreaView style={{flex: 1}}>
+  <SafeAreaProvider style={{flex: 1}}>
     <StatusBar barStyle={'dark-content'} backgroundColor={'#f2f2f2'} />
-    <LoginScreen />
-  </SafeAreaView>
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
+  </SafeAreaProvider>
 );
 
 const styles = StyleSheet.create({});
