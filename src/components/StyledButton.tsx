@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontSize: dh(2.1),
+    fontSize: dh(1.8),
   },
 });

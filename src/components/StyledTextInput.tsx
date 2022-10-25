@@ -22,7 +22,7 @@ const StyledTextInput = ({
 }: StyledTextInputProps) => {
   return (
     <View style={[styles.container, containerStyle]}>
-      <TextInput style={{flex: 1}} {...inputProps} />
+      <TextInput style={{flex: 1, fontSize: dh(1.6)}} {...inputProps} />
     </View>
   );
 };
@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     width: dw(90),
     height: dh(6),
-    padding: 2,
+    justifyContent: 'center',
   },
 });
